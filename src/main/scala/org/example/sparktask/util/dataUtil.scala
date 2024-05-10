@@ -18,7 +18,7 @@ object dataUtil {
     val sparkConfig = configMap.filterKeys(_.startsWith("spark"))
 
     /** AWS Credentials loaded from the system */
-    val awsCredentials = new DefaultAWSCredentialsProviderChain()
+   // val awsCredentials = new DefaultAWSCredentialsProviderChain()
       .getCredentials()
 
     /** Using sparkConf object to set configuration*/
@@ -31,8 +31,8 @@ object dataUtil {
     val spark = SparkSession.builder
       .appName(appname)
       .config(sparkConf)
-      .config("spark.hadoop.fs.s3a.access.key", awsCredentials.getAWSAccessKeyId)
-      .config("spark.hadoop.fs.s3a.secret.key", awsCredentials.getAWSSecretKey)
+     // .config("spark.hadoop.fs.s3a.access.key", awsCredentials.getAWSAccessKeyId)
+      //.config("spark.hadoop.fs.s3a.secret.key", awsCredentials.getAWSSecretKey)
       .getOrCreate()
 
     spark
