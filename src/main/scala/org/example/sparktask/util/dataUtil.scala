@@ -19,7 +19,7 @@ object dataUtil {
 
     /** AWS Credentials loaded from the system */
    // val awsCredentials = new DefaultAWSCredentialsProviderChain()
-      .getCredentials()
+   //   .getCredentials()
 
     /** Using sparkConf object to set configuration*/
     val sparkConf = new SparkConf()
