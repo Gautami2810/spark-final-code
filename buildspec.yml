@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing OpenJDK 11..."
+      - apt-get update
+      - apt-get install -y openjdk-11-jdk
+  pre_build:
+    commands:
+      - echo "Nothing to do in the pre-build phase"
+  build:
+    commands:
+      - echo "Building Spark project"
+      - mvn clean package
+  post_build:
+    commands:
+      - echo "Build completed successfully"
+
+artifacts:
+  files:
+    - target/spark-emr-cluster-1.0-SNAPSHOT-jar-with-dependencies.jar
