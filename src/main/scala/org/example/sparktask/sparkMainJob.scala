@@ -1,6 +1,7 @@
 package org.example.sparktask
 import org.apache.log4j.Logger
 
+import org.apache.spark.sql.functions.col
 import org.example.sparktask.processing.DataProcessing.{getCurrentDate, processDateColumn}
 import org.example.sparktask.processing.dataIO._
 import org.example.sparktask.util.dataUtil.{createSparkSession, loadInputConfig, loadOutputConfig}
